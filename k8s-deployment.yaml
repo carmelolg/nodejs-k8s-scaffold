@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carmelolg-nodejs-deployment
+  labels:
+    app: carmelolg-nodejs-scaffold
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: carmelolg-nodejs-scaffold
+  template:
+    metadata:
+      labels:
+        app: carmelolg-nodejs-scaffold
+    spec:
+      containers:
+      - name: carmelolg-nodejs-scaffold
+        image: carmelolg/nodejs-k8s-scaffold
+        ports:
+        - containerPort: 80
