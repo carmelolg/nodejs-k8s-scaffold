@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: carmelolg-nodejs-deployment
+  name: carmelolg-nodejs-scaffold-deployment
   labels:
     app: carmelolg-nodejs-scaffold
 spec:

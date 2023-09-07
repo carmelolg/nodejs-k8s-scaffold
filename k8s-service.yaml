@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: homelo-apigw-service
+  name: carmelolg-nodejs-scaffold-service
 spec:
   type: ClusterIP
   ports:
   - port: 80
     targetPort: 8081
   selector:
-    app: homelo-apigw-dpl
+    app: carmelolg-nodejs-scaffold
 
 
