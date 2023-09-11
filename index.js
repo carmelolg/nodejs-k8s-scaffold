@@ -15,4 +15,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(router)
 
-app.listen(port, () => console.log("Node.js K8S Scaffold run on " + port));
+app.listen(port, () => console.log("Node.js K8S Scaffold runs on " + port));
