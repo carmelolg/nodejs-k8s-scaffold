@@ -2,9 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ingress-nginx-config
-  namespace: ingress-nginx
+  namespace: default
 data:
-  http-snippet: "proxy_cache_path /tmp/nginx levels=1:2 keys_zone=static-cache:10m max_size=10g  inactive=60m use_temp_path=off;"
+  http-snippet: "proxy_cache_path /tmp/nginx levels=1:2 keys_zone=static-cache:20m max_size=10g  inactive=60m use_temp_path=off;"
 
 ---
 
@@ -14,7 +14,7 @@ metadata:
   name: carmelolg-nodejs-scaffold-ingress
   namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/proxy-buffering: "on"
@@ -39,3 +39,9 @@ spec:
         path: /carmelolg(/|$)(.*)
         pathType: Prefix
 
+
+
+### Note
+
+# Nginx controller
+# https://artifacthub.io/packages/helm/bitnami/nginx-ingress-controller
